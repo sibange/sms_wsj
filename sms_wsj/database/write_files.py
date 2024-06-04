@@ -63,7 +63,7 @@ def audio_read(example):
 
             with soundfile.SoundFile(wav_file, mode='r') as f:
                 audio_data.append(f.read().T)
-        example['audio_data'][audio_key] = np.array(audio_data)
+        example['audio_data'][audio_key] = np.array(audio_data, dtype="object")
     return example
 
 
